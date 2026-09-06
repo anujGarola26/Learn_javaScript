@@ -1,11 +1,12 @@
-// Problem 1: Strict Type Detection Engine ('safeTypeOf')
+// Problem 2: Zero-Builtin Shallow Object & Array Cloner ('shallowClone')
 
-function safeTypeOf(var1, var2) {
-  if (var1 == var2) {
-    console.log(true);
-  } else {
-    console.log(false);
+// Solution 1 sspecifically for array
+function shallowClone(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i]);
   }
+  return newArr;
 }
 
-safeTypeOf(2, "2");
+console.log(shallowClone([2, 3, 4, "anuj", {}]));
