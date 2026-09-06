@@ -28,7 +28,7 @@ function fizzBuzz(num){
   console.log(newArr);
   let newArr1 = [];
   for(let i=0; i<= num; i++){
-    
+
     if(arr3.includes(i)) {
       newArr1.push('fizz');
     }
@@ -45,3 +45,26 @@ function fizzBuzz(num){
 }
 
 fizzBuzz(15);
+
+// Solution 2
+
+function fizzBuzz2(num){
+  let arr = [];
+  for(let i=1; i<= num; i++){
+    if(i%5 == 0 && i%3 == 0 ){
+      arr.push('fizzbuzz')
+    }
+    else if(i%3 == 0){
+      arr.push('fizz')
+    }
+    else if(i%5 == 0){
+      arr.push('buzz')
+    }
+    else{
+      arr.push(i)
+    }
+  }
+  console.log(arr)
+}
+
+fizzBuzz2(15);
