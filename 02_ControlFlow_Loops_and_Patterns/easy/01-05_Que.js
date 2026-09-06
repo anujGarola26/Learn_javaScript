@@ -68,3 +68,28 @@ function fizzBuzz2(num){
 }
 
 fizzBuzz2(15);
+
+// Problem 2: Classical Symmetrical Star Pyramid Generator ('generatePyramid')
+
+function generatePyramid(range){
+  let result = '';
+  for(let i=0; i< range; i++){
+    let spaceC = range-i;
+    let star = 2*i-1;
+    for(let j =0; j <= spaceC; j++){
+      result+= " ";
+    }
+    for(let k =1; k <= star; k++){
+      result+= "*";
+    }
+    for(let j =0; j <= spaceC; j++){
+      result+= " ";
+    }
+    if (i < range - 1) {
+      result += "\n";
+      }
+  }
+  console.log(result);
+}
+
+generatePyramid(10);
