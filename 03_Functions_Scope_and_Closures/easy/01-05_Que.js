@@ -31,3 +31,27 @@ console.log(counter.decrement());
 console.log(counter.decrement());
 console.log(counter.decrement());
 console.log(counter.reset());
+
+
+
+// Problem 2: Greeter & Prefix Generator (Higher-Order Function with Parameter Closure)
+
+
+
+function createPrefixer(prefix = 'LOG'){
+  const newPrefix = prefix="LOG"? 'LOG':String(prefix).toLocaleUpperCase().trim();
+  return function(message){
+    if(!message){
+      return 'No message';
+    }
+    return (`${prefix}: ${message}`);
+  }
+}
+
+let log = createPrefixer();
+console.log(log());
+console.log(log('Hello i am anuj'));
+
+let error = createPrefixer('error');
+console.log(error());
+console.log(error('error agya guyzz!!'));
