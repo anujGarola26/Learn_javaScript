@@ -43,3 +43,18 @@ function findMinMax2(arr){
 }
 
 console.log(findMinMax2([10, 4, -99, 1000, 43, 5, 8, 3, 7, 21, 6, -8]));
+
+
+
+// Problem 2: Reverse an Array In-Place (Two-Pointer Technique)
+
+// Approach 1
+function reverseArray(arr){
+  let reversedArray = [];
+  for(let i = arr.length-1; i>= 0; i--){
+    reversedArray.push(arr[i])
+  }
+  return reversedArray;
+}
+
+console.log(reverseArray([3, 5, 8, 3, 7, 21, 6, 10]));
