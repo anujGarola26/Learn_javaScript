@@ -58,3 +58,4 @@ function reverseArray(arr){
 }
 
 console.log(reverseArray([3, 5, 8, 3, 7, 21, 6, 10]));
+console.log(reverseArray(['a', 'b', 'c', 'd']));
