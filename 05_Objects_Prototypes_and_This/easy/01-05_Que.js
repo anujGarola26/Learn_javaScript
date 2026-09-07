@@ -23,7 +23,41 @@ function copyObject(obj){
 }
 
 console.log(copyObject({"name": 'anuj'}));
-console.log(copyObject(2))
-console.log(copyObject('hello'))
-console.log(copyObject(undefined))
-console.log(copyObject(null))
+console.log(copyObject(2));
+console.log(copyObject('hello'));
+console.log(copyObject(undefined));
+console.log(copyObject(null));
+
+
+
+// Problem 2: Count the Number of Own Enumerable Properties in an Object
+
+
+function countOwnProperties(obj){
+  let arr = [];
+  let count=0;
+  if(!Object || typeof obj !== 'object' || Array.isArray(obj)){
+    return 0;
+  }
+  if(obj === null){
+    return null;
+  }
+  console.log('object');
+  for (const key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      arr.push(obj)
+      count++
+    }
+  }
+  console.log(arr)
+  count = arr.length;
+  return count;
+}
+
+console.log(countOwnProperties(2));
+console.log(countOwnProperties('hello'));
+console.log(countOwnProperties(undefined));
+console.log(countOwnProperties(null));
+console.log(countOwnProperties({}));
+console.log(countOwnProperties({"name": 'anuj', 'age': 22, 'city': 'thane'}));
+
