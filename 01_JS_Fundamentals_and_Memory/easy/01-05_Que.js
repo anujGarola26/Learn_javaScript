@@ -37,3 +37,49 @@ console.log(shallowClone1({ name: "Aman", scores: [90, 95] }));
 console.log(shallowClone1(95));
 console.log(shallowClone1(undefined));
 console.log(shallowClone1(null));
+
+
+// Problem 3: Robust 'NaN' Identifier Polyfill ('isStrictNaN')
+
+function isStrictNaN(val){
+  if(val === val){
+    return typeof val;
+  }else {
+    return NaN;
+  }
+}
+
+console.log(isStrictNaN(23));
+console.log(isStrictNaN('hello'));
+console.log(isStrictNaN(null));
+console.log(isStrictNaN(NaN));
+
+
+// Problem 4: Falsy Value Stripper without Array Builtins ('filterFalsyValues')
+
+
+function filterFalsyValues(arr){
+  filteredArray = [];
+  for(let i=0; i < arr.length ; i++){
+    if(arr[i]){
+      filteredArray.push(arr[i]);
+    }
+  }
+  return filteredArray;
+}
+
+console.log(filterFalsyValues([2,0, 1,NaN, undefined, true, false ]));
+
+
+// Problem 5: Immutable String Character Swapper ('swapCharAt')
+
+function swapCharAt(str, i, j){
+  let newStr = str.split('');
+  let res1= newStr[i];
+  let res2= newStr[j];
+  newStr[i] = res2
+  newStr[j] = res1
+  return newStr.join('');
+}
+
+console.log(swapCharAt('hello', 1, 3));
