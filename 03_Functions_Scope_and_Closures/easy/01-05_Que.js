@@ -55,3 +55,19 @@ console.log(log('Hello i am anuj'));
 let error = createPrefixer('error');
 console.log(error());
 console.log(error('error agya guyzz!!'));
+
+
+// Problem 3: Simple Memoizer for Pure Functions with Object Cache (`memoize`)
+
+
+
+function simpleMemoize(fn) {
+  const cache = Object.create(null); // safe from prototype pollution
+
+  return function (arg) {
+    if (arg in cache) {
+      return cache[arg];
+    }
+    return (cache[arg] = fn(arg));
+  };
+}
