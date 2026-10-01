@@ -50,3 +50,41 @@ console.log(isPalindrome(2324));
 console.log(isPalindrome('laal'));
 console.log(isPalindrome('race a car'));
 console.log(isPalindrome('A man, a plan, a canal'));
+
+
+// Problem 3: Count Vowels and Consonants in a String
+
+
+function countVowelsAndConsonants(str) {
+  if (typeof str !== "string") {
+    return "Not a valid string";
+  }
+
+  const strObject = { Vowels: 0, Consonants: 0 };
+  const VOWELS = "aeiou";
+  const cleanStr = str.toLowerCase();
+
+  for (let i = 0; i < cleanStr.length; i++) {
+    const char = cleanStr[i];
+
+    if (char >= "a" && char <= "z") {
+      if (VOWELS.includes(char)) {
+        strObject.Vowels++;
+      } else {
+        strObject.Consonants++;
+      }
+    }
+  }
+
+  return strObject;
+}
+
+console.log(countVowelsAndConsonants("Hello World 123!"));
+// Output: { Vowels: 3, Consonants: 7 }
+
+console.log(countVowelsAndConsonants([]));
+console.log(countVowelsAndConsonants(""));
+console.log(countVowelsAndConsonants("hello"));
+console.log(countVowelsAndConsonants(null));
+console.log(countVowelsAndConsonants(undefined));
+console.log(countVowelsAndConsonants(' anuj '));
