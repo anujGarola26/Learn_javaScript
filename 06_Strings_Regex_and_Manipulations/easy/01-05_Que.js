@@ -88,3 +88,50 @@ console.log(countVowelsAndConsonants("hello"));
 console.log(countVowelsAndConsonants(null));
 console.log(countVowelsAndConsonants(undefined));
 console.log(countVowelsAndConsonants(' anuj '));
+
+
+
+// Problem 4: Find the First Non-Repeating Character in a String
+
+// Approach 1
+function firstUniqChar(str){
+  if (typeof str !== "string") {
+    return "Not a valid string";
+  }
+  let result = str.replaceAll(" ", "");
+  let newStr = result.toLowerCase().split('');
+  for (let i = 0; i < newStr.length; i++) {
+    if(newStr[i] != newStr[i+1] && newStr[i-1] != newStr[i]){
+      return i;
+    }
+  }
+  return "Not found"
+}
+
+console.log(firstUniqChar(" a n U J"));
+console.log(firstUniqChar(" sbfggh"));
+console.log(firstUniqChar(" aanuj"));
+console.log(firstUniqChar(" leetcode"));
+console.log(firstUniqChar(" loveleetcode"));
+console.log(firstUniqChar(" aabb"));
+
+// Approach 2
+function firstUniqChar1(s) {
+  let charCount = {};
+  
+  for (let char of s) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+  
+  for (let i = 0; i < s.length; i++) {
+    if (charCount[s[i]] === 1) {
+      return i;
+    }
+  }
+  
+  return -1;
+}
+
+console.log(firstUniqChar1("leetcode")); 
+console.log(firstUniqChar1("loveleetcode")); 
+console.log(firstUniqChar1("aabb"));
